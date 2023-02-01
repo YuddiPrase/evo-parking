@@ -84,6 +84,10 @@
     sessionStorage.removeItem("evo_il");
     window.location.href = loginURL;
   });
+
+  $.get("/admin/pages/content.html", function (data) {
+    $("#content").html(data);
+  });
 })(jQuery); // End of use strict
 
 $(window).on("load", function () {
@@ -106,3 +110,27 @@ $(window).on("load", function () {
     }
   }
 });
+
+function goTo(state) {
+  if (state === "INCOME") {
+    $.get("/admin/pages/income/daily.html", function (data) {
+      $("#content").html(data);
+    });
+  } else if (state === "INCOME_MONTHLY") {
+    $.get("/admin/pages/income/monthly.html", function (data) {
+      $("#content").html(data);
+    });
+  } else if (state === "INCOME_YEARLY") {
+    $.get("/admin/pages/income/yearly.html", function (data) {
+      $("#content").html(data);
+    });
+  } else {
+    setPage("/admin/pages/content.html")
+  }
+}
+
+function setPage(url) {
+  $.get(url, function (data) {
+    $("#content").html(data);
+  });
+}
