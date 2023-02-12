@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virtual Account Parking Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../assets/css/tailwind.min.css" rel="stylesheet" />
+    <link href="../assets/css/fa.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link href="../src/pages/member-payment/index.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container">
+      <div id="section-parkir" class="mb-6">
+        <div
+          id="card-parkir"
+          class="card-parkir bg-gray-200 rounded-2xl shadow p-4 flex flex-col justify-center items-start"
+        >
+          <h3 class="w-full text-xl text-center txt-shadow font-bold mb-6">
+            Virtual Account Parking Payment
+          </h3>
+          <div class="mb-4 flex flex-row gap-1 items-center">
+            <p class="text-base txt-shadow font-bold">ID Member:</p>
+            <p
+              class="text-lg text-gray-600 font-bold hidden"
+              id="card-id-member"
+            ></p>
+          </div>
+          <div class="mb-4 flex flex-row gap-1 items-start">
+            <p class="text-base txt-shadow font-bold leading-4">No. VA:</p>
+            <div class="flex flex-col gap-1 items-start">
+              <p
+                class="text-lg text-gray-600 font-bold hidden shadow-none leading-4"
+                id="card-va-number"
+              ></p>
+              <p
+                class="text-sm text-gray-600 font-bold hidden shadow-none leading-4"
+                id="card-bank-name"
+              ></p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex gap-1 justify-center items-center bg-yellow-200 p-4 mt-5 rounded-lg"
+        >
+          <i class="fas fa-exclamation-triangle text-yellow-500 text-2xl"></i>
+          <span class="text-sm text-yellow-500 text-center">
+            Setelah submit, segera lakukan pembayaran melalui Virtual Account
+            yang tertera di atas dan klik tombol 'Sudah Bayar' jika sudah
+            melakukan pembayaran.
+          </span>
+        </div>
+      </div>
+      <form id="payment-form">
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="id-member"
+            >ID Member</label
+          >
+          <input
+            class="block appearance-none w-full bg-white border-gray-400 rounded py-3 px-4 pr-8 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+            type="text"
+            id="id-member"
+            name="id-member"
+            placeholder="Masukan ID Member"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="bank"
+            >Bank</label
+          >
+          <!-- <select
+            class="w-full bg-white border border-gray-400 rounded p-2"
+            id="bank"
+            name="bank"
+            required
+          >
+            <option value="">Pilih Bank</option>
+            <option value="bca">BCA</option>
+            <option value="bni">BNI</option>
+            <option value="mandiri">Mandiri</option>
+          </select> -->
+          <div class="relative">
+            <select
+              class="block appearance-none w-full bg-white border-gray-400 rounded-lg py-3 px-4 pr-8 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
+              id="bank"
+              name="bank"
+              required
+            >
+              <option value="">Pilih Bank</option>
+              <option value="BCA">BCA</option>
+              <option value="BNI">BNI</option>
+              <option value="Mandiri">Mandiri</option>
+              <option value="CIMB Niaga">CIMB Niaga</option>
+              <option value="BSM">BSM</option>
+              <option value="BRI">BRI</option>
+            </select>
+            <div
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            >
+              <svg
+                class="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="mb-4 flex items-center gap-2" id="section-captcha">
+          <div id="captcha-container" class="captcha-container rounded shadow">
+            <div id="captcha" class="block text-gray-100 font-bold mr-2"></div>
+          </div>
+          <input
+            class="w-20 border border-gray-300 rounded p-2"
+            type="text"
+            id="captcha-input"
+            name="captcha-input"
+            required
+          />
+        </div>
+        <button
+          id="btn-submit"
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Ajukan Pembayaran VA
+        </button>
+      </form>
+      <button
+        id="btn-paid"
+        class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded hidden"
+      >
+        Sudah Bayar
+      </button>
+    </div>
+    <script src="../src/pages/member-payment/member-payment.js"></script>
+  </body>
+</html>

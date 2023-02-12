@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Payment Form</title>
+    <link rel="stylesheet" type="text/css" href="member-payment.css">
+  </head>
+  <body>
+    <h1>Payment Form</h1>
+    <form id="payment-form">
+      <div class="form-group">
+        <label for="member-id">ID Member:</label>
+        <input type="text" id="member-id" required>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" min="1000" required>
+      </div>
+      <div class="form-group">
+        <label for="bank">Bank:</label>
+        <select id="bank">
+          <option value="bca">BCA</option>
+          <option value="mandiri">Mandiri</option>
+          <option value="bni">BNI</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <div id="captcha"></div>
+        <input type="text" id="captcha-input" required>
+      </div>
+      <button type="submit">Pay</button>
+    </form>
+    <script src="member-payment.js"></script>
+  </body>
+</html>

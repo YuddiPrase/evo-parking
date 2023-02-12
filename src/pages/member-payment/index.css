@@ -1,0 +1,36 @@
+.container {
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.card-parkir {
+    background-color: rgba(200, 200, 200, 0.1);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    padding: 20px;
+    color: white;
+    box-shadow: 1.5px 1.5px 3px 1px #fff, -2px -2px 3px 1px rgba(174, 174, 192, .4) !important;
+}
+
+.txt-shadow {
+    text-shadow: -2px -1px black;
+}
+
+.captcha-container {
+    background-image: url(https://picsum.photos/id/237/200/300);
+    background-size: cover;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+}
